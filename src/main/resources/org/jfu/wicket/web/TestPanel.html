@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Panel</title>
+</head>
+<body>
+<h1>Test Panel</h1>
+
+<dl>
+  <dt>Creating in-line panels with WebMarkupContainer</dt>
+  <dd>
+    <div wicket:id="informationBox">
+      You've got <span wicket:id="messagesNumber"></span> new messages.
+    </div>
+  </dd>
+
+  <dt>Working with markup fragments</dt>
+  <dd>
+    <a wicket:id="switcher">Switcher</a>
+    <div wicket:id="contentArea"></div>
+    <wicket:fragment wicket:id="fragment1">
+      Fragement 1
+    </wicket:fragment>
+    <wicket:fragment wicket:id="fragment2">
+      Fragement 2
+    </wicket:fragment>
+  </dd>
+
+  <wicket:enclosure child="totalAmount">
+  <dt>Hiding decorating elements with the wicket:enclosure tag</dt>
+  <dd>
+      <dl>
+        <dt>Total amount: </dt><dd wicket:id="totalAmount"></dd>
+        <dt>Expected delivery date: </dt><dd wicket:id="delivDate"></dd>
+      </dl>
+  </dd>
+  </wicket:enclosure>
+
+  <dt>Surrounding existing markup with Border</dt>
+  <dd>
+    <ul>
+      <li>
+        <div wicket:id="myBorder1">
+          <p>
+          Test Content in my border 1.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div wicket:id="myBorder2">
+          <p>
+          Test Content in my border 2.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </dd>
+</dl>
+
+<a wicket:id="goBackHome">Go Back Home Page</a>
+</body>
+</html>
