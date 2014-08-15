@@ -15,7 +15,7 @@ public class TestPanel extends WebPage{
 
     private static final long serialVersionUID = 5397830602565069767L;
 
-    public TestPanel(PageParameters pageParameters) {
+    public TestPanel(final PageParameters pageParameters) {
         super(pageParameters);
         // Creating in-line panels with WebMarkupContainer
         WebMarkupContainer informationBox = new WebMarkupContainer("informationBox");
@@ -34,12 +34,12 @@ public class TestPanel extends WebPage{
             private static final long serialVersionUID = 1L;
             @Override
             public void onClick() {
-                PageParameters pp = new PageParameters();
-                pp.set("fragment", "1");
                 if (fragment.isNull() || fragment.isEmpty() || fragment.toInt() == 1) {
-                    pp.set("fragment", "2");
+                    pageParameters.set("fragment", "2");
+                } else {
+                    pageParameters.set("fragment", "1");
                 }
-                setResponsePage(TestPanel.class, pp);
+                setResponsePage(TestPanel.class, pageParameters);
             }
         });
 
@@ -54,10 +54,10 @@ public class TestPanel extends WebPage{
         }
 
         // Surrounding existing markup with Border
-        MyBorder border1 = new MyBorder("myBorder1", "My Border 1");
+        MyBorder border1 = new MyBorder("myBorder1", "My Border 1 Title");
         border1.setRenderBodyOnly(true);
         add(border1);
-        add(new MyBorder("myBorder2", "My Border 2"));
+        add(new MyBorder("myBorder2", "My Border 2 Title"));
 
         // Go Back Home Page Link
         add(new StatelessLink<String>("goBackHome") {

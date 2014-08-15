@@ -20,6 +20,16 @@ public class HomePage extends WebPage {
 
         });
 
+        // Test Form link
+        add(new StatelessLink<String>("testForm") {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public void onClick() {
+                setResponsePage(TestForm.class);
+            }
+
+        });
+
     }
 
 }
