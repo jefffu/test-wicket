@@ -8,6 +8,7 @@ import org.apache.wicket.model.CompoundPropertyModel;
 
 public class LoginForm extends Form<LoginForm> {
     private static final long serialVersionUID = 1L;
+
     private String username;
     private String password;
     private String loginStatus;

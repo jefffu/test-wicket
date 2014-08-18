@@ -13,6 +13,7 @@ public class HomePage extends WebPage {
         // Test Panel Link
         add(new StatelessLink<String>("testPanel") {
             private static final long serialVersionUID = 1L;
+
             @Override
             public void onClick() {
                 setResponsePage(TestPanel.class);
@@ -23,6 +24,7 @@ public class HomePage extends WebPage {
         // Test Form link
         add(new StatelessLink<String>("testForm") {
             private static final long serialVersionUID = 1L;
+
             @Override
             public void onClick() {
                 setResponsePage(TestForm.class);
@@ -33,9 +35,21 @@ public class HomePage extends WebPage {
         // Test Form 2 link
         add(new StatelessLink<String>("testForm2") {
             private static final long serialVersionUID = 1L;
+
             @Override
             public void onClick() {
                 setResponsePage(TestForm2.class);
+            }
+
+        });
+
+        // Test Link link
+        add(new StatelessLink<String>("testLink") {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void onClick() {
+                setResponsePage(TestLink.class);
             }
 
         });
