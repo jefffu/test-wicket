@@ -54,6 +54,17 @@ public class HomePage extends WebPage {
 
         });
 
+        // Test Single Checkbox
+        add(new StatelessLink<String>("testSingleCheckbox") {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void onClick() {
+                setResponsePage(TestSingleCheckboxPanel.class);
+            }
+
+        });
+
         // Test Checkbox 1
         add(new StatelessLink<String>("testCheckbox1") {
             private static final long serialVersionUID = 1L;

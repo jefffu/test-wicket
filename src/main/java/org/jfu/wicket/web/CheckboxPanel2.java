@@ -1,7 +1,6 @@
 package org.jfu.wicket.web;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +11,7 @@ import org.apache.wicket.markup.html.form.CheckGroupSelector;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
@@ -28,6 +28,9 @@ public class CheckboxPanel2 extends Panel {
 
         TestForm form = new TestForm("form");
         add(form);
+
+        FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
+        add(feedbackPanel);
     }
 
     public static class TestForm extends Form<TestForm> {
@@ -82,6 +85,7 @@ public class CheckboxPanel2 extends Panel {
         @Override
         protected void onSubmit() {
             logger.debug("======== onSubmit(), fruits: " + fruits);
+            info("Checked: " + fruits.toString());
         }
 
     }

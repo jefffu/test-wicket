@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.form.CheckBoxMultipleChoice;
 import org.apache.wicket.markup.html.form.CheckboxMultipleChoiceSelector;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.slf4j.Logger;
@@ -24,6 +25,9 @@ public class CheckboxPanel1 extends Panel {
 
         TestForm form = new TestForm("form");
         add(form);
+
+        FeedbackPanel feedbackPanel = new FeedbackPanel("feedback");
+        add(feedbackPanel);
     }
 
     public static class TestForm extends Form<TestForm> {
@@ -66,6 +70,7 @@ public class CheckboxPanel1 extends Panel {
         @Override
         protected void onSubmit() {
             logger.debug("======== onSubmit(), fruits: " + fruits);
+            info("Checked: " + fruits.toString());
         }
 
     }
