@@ -9,7 +9,10 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+    <!--
     <wicket.version>6.15.0</wicket.version>
+    -->
+    <wicket.version>7.0.0-SNAPSHOT</wicket.version>
     <slf4j.version>1.6.4</slf4j.version>
   </properties>
 

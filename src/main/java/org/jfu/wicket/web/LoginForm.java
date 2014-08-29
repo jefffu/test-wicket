@@ -23,10 +23,11 @@ public class LoginForm extends Form<LoginForm> {
 
     @Override
     protected void onSubmit() {
-        if(username.equals("test") && password.equals("test"))
+        if(username.equals("test") && password.equals("test")) {
             loginStatus = "Congratulations!";
-        else
+        } else {
             loginStatus = "Wrong username or password !";
+        }
     }
 
     public String getUsername() {
